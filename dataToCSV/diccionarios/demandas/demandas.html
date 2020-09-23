@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Informe de diccionario de Tabla de Datos - demandas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      body {  font-family: verdana, helvetica, sans-serif; margin: 0px; padding: 0; }
+      h1 { font-weight: bold; font-size: 150%; border-bottom-style: solid; border-bottom-width: 2px; margin-top: 0px; padding-bottom: 0.5ex; color: #eeeeee; overflow: hidden; text-overflow: ellipsis; }
+      h2 { font-size: 130%; padding-bottom: 0.5ex; color: #009ACE; border-bottom-style: solid; border-bottom-width: 2px; }
+      h3 { font-size: 110%; padding-bottom: 0.5ex; color: #000000; }
+      th { text-align: left; background-color: #009ACE; color: #eeeeee; }
+      #ReportHeader { padding: 10px; background-color: #009ACE; color: #eeeeee; border-bottom-style: solid; border-bottom-width: 2px; border-color: #999999; }
+      #ReportHeader th { width: 25%; white-space: nowrap; vertical-align: top; }
+      #ReportHeader td { vertical-align: top; color: #eeeeee; }
+      #ReportNotes { padding: 10px; background-color: #eeeeee; font-size: 80%; border-bottom-style: solid; border-bottom-width: 2px; border-color: #999999; }
+      .ReportSQL { margin-bottom: 10px; padding: 10px; display: block; background-color: #eeeeee; font-family: monospace; }
+      #ReportDetails { margin-left: 10px; margin-right: 10px; margin-bottom: 10px; }
+      #ReportDetails td, th { font-size: 80%; margin-left: 2px; margin-right: 2px; }
+      #ReportDetails th { border-bottom-color: #777777; border-bottom-style: solid; border-bottom-width: 2px; }
+      .ReportDetailsOddDataRow { background-color: #dddddd; }
+      .ReportDetailsEvenDataRow { background-color: #eeeeee; }
+      .ReportTableHeaderCell { background-color: #dddddd; color: #009ACE; vertical-align: top; font-size: 80%; white-space: nowrap; }
+      .ReportTableValueCell { vertical-align: top; font-size: 80%; white-space: nowrap; }
+      .ReportTableInfo { font-size: 80%; font-style: italic; }
+      #ReportFooter { font-weight: bold; font-size: 80%; text-align: right; background-color: #009ACE; color: #eeeeee; margin-top: 10px; padding: 2px; border-bottom-style: solid; border-bottom-width: 2px; border-top-style: solid; border-top-width: 2px; border-color: #999999; }
+      #ReportFooter a { color: #ffffff; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <div id="ReportHeader"><h1>Informe de diccionario de Tabla de Datos - demandas</h1><b>Generado: </b>10/06/2019 10:36:58<br /><b>Servidor: </b>181 (192.168.10.181:5432)<br /><b>Base de Datos: </b>bdSueldos<br /><b>Esquema: </b>demandas<br /></div>
+    <div id="ReportDetails">
+      <h2>Columnas</h2>
+      <div style="overflow:auto;">
+        <table>
+          <tr>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">Nombre</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">Tipo de Dato</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">¿No Nulo?</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">¿Clave Primaria?</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">Defecto</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">Comentario</th>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">id</td>
+            <td class="ReportTableValueCell">integer</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">nextval('demandas.demandas_id_seq'::regclass)</td>
+            <td class="ReportTableValueCell">Identificador de la demanda. Es un número correlativo asignado por el sistema para permitir la modificación de juzgado, Secr y Nro. Exp.</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">id_juz</td>
+            <td class="ReportTableValueCell">integer</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Juzgado. Tipo y Número</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">exp</td>
+            <td class="ReportTableValueCell">character varying(12)</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Nro. Expte. Formato 9999999/9999     9(7)   / 9(4)</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">caratula</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Carátula</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">dni</td>
+            <td class="ReportTableValueCell">integer</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Documento del abogado</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">feprei</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de presentación del informe</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">feinde</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de Inicio de la demanda</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">ferede</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de respuesta a la demanda</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">objde</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Objeto de la Demanda</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">monto</td>
+            <td class="ReportTableValueCell">numeric(15,2)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">0.00</td>
+            <td class="ReportTableValueCell">Monto de la demanda</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">apacta</td>
+            <td class="ReportTableValueCell">character varying(100)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Apoderado actual de la actora</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">apactd</td>
+            <td class="ReportTableValueCell">character varying(100)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Apoderado actual de la demandada</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">dorac</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Domicilio real de la actora</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">dorde</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Domicilio real de la demandada</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">dolac</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Domicilio Legal de la actora</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">dolde</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Domicilio Legal de la demandada</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">etapro</td>
+            <td class="ReportTableValueCell">character varying(100)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Etapa procesal</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">pruof</td>
+            <td class="ReportTableValueCell">character varying(2)</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">'No'::bpchar</td>
+            <td class="ReportTableValueCell">Se ofrecieron pruebas.  No / Sí</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">prupp</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Pruebas pendientes de producción</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">trpmc</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Trámites que deban realizarse para urgir la producción de pruebas de ma MCC</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">pamcc</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de presentación del alegato de la MCC</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">arsen</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de autos para resolver sentencia</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">senpi</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de la sentencia en primera instancia</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">sifa1</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Síntesis del fallo de primera instancia</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">senca</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de la sentencia de la cámara</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">sifa2</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Síntesis del fallo de la cámara</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">apmcc</td>
+            <td class="ReportTableValueCell">character varying(2)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">'No'::bpchar</td>
+            <td class="ReportTableValueCell">Apelación de la MCC.  No / Si</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">apcon</td>
+            <td class="ReportTableValueCell">character varying(2)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">'No'::bpchar</td>
+            <td class="ReportTableValueCell">Apelación de la contraria. Si / No.</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">efec</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Efectos de la concesión de la apelación</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">stjmo</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Motivo de la tramitación ante el STJ</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">stjfs</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de los autos para sentencia del STJ</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">stjob</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Sentencia del STJ</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">fmeca</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de emisión de medidas cautelares</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">mcdet</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Detalle de las medidas cautelares</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">finmc</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de resolución de incidentes o medidas cautelares</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">fapim</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de apelación de incidentes o medidas cautelares</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">qapim</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Quién apeló el incidente o la medida cautelar</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">capim</td>
+            <td class="ReportTableValueCell">character varying(2)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">'No'::bpchar</td>
+            <td class="ReportTableValueCell">Concesión de la apelación a incidentes o medidas cautelares. Si / No</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">efaim</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Efectos de la apelación a incidentes o medidas cautelares</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">fraim</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de la resolución a la apelación del incidente o medida cautelar</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">sdec</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Síntesis de la decisión</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">sdobs</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Observaciones</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">notin</td>
+            <td class="ReportTableValueCell">text</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Notas de interés</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">opalta</td>
+            <td class="ReportTableValueCell">character varying(10)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Operador que dió de alta el registro</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">fealta</td>
+            <td class="ReportTableValueCell">timestamp without time zone</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">now()</td>
+            <td class="ReportTableValueCell">Fecha de alta del registro</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">opmod</td>
+            <td class="ReportTableValueCell">character varying(10)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Operador que efectuó la última modificación</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">femod</td>
+            <td class="ReportTableValueCell">timestamp without time zone</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">now()</td>
+            <td class="ReportTableValueCell">Fecha de la última modificación</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">sec</td>
+            <td class="ReportTableValueCell">character varying(2)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">carpeta</td>
+            <td class="ReportTableValueCell">integer</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">0</td>
+            <td class="ReportTableValueCell">Nro. de carpeta</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">sufijo_expte</td>
+            <td class="ReportTableValueCell">integer</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Es el sufijo del expediente</td>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <h2>Restricciones</h2>
+      <div style="overflow:auto;">
+        <table>
+          <tr>
+            <th class="ReportTableHeaderCell" width="25%">Nombre</th>
+            <th class="ReportTableHeaderCell" width="25%">Tipo</th>
+            <th class="ReportTableHeaderCell" width="25%">Definición</th>
+            <th class="ReportTableHeaderCell" width="25%">Comentario</th>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">demandas_pk</td>
+            <td class="ReportTableValueCell">Clave primaria</td>
+            <td class="ReportTableValueCell">(id)</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">demandas_ex_doc</td>
+            <td class="ReportTableValueCell">Clave ajena</td>
+            <td class="ReportTableValueCell">(dni)       REFERENCES demandas.abogados (dni) MATCH FULL       ON UPDATE RESTRICT ON DELETE RESTRICT</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">demandas_ex_juz</td>
+            <td class="ReportTableValueCell">Clave ajena</td>
+            <td class="ReportTableValueCell">(id_juz)       REFERENCES demandas.juzgados (id_juz) MATCH FULL       ON UPDATE RESTRICT ON DELETE RESTRICT</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+        </table>
+      </div>
+      <br />
+    </div>
+    <div id="ReportFooter">
+Reporte generado por: <a href="http://www.pgadmin.org/">pgAdmin III</a></div>
+    <br />
+  </body>
+  <script src="../../main.js"></script>
+  <script>
+    htmlExtractorInformation(document)
+  </script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TEXTAREA TRUCHO AUTOAJUSTABLE.</title>
+    <script type="text/javascript">
+      var ref,
+        cont = ':-)';
+
+      function sapeartextarea() {
+        ref = document.getElementById('textareaTrucho');
+
+        document.getElementById('guardatxt').style.height =
+          ref.offsetHeight + 'px';
+
+        document.getElementById('guardatxt').style.width =
+          ref.offsetWidth > 400 ? ref.offsetWidth + 'px' : '400px';
+
+        cont = ref.innerHTML
+          .replace(/<p>/gi, '')
+          .replace(/&nbsp;/gi, ' ')
+          .replace(/<br>|<\/p>/gi, '\r\n');
+
+        document.getElementById('codigo').value = cont;
+      }
+
+      function limpiartextarea() {
+        document.getElementById('textareaTrucho').innerHTML = '';
+
+        sapeartextarea();
+      }
+    </script>
+    <style type="text/css">
+      #guardatxt {
+        width: 400px;
+        height: 1em;
+        overflow: hidden;
+        padding: 0.2em;
+        border: solid 1px black;
+      }
+
+      #textareaTrucho {
+        font: normal 16px/16px monospace;
+        background: yellow;
+        display: inline-block;
+        min-height: 1em;
+        min-width: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Simula un <code>textarea</code> que ajusta su tamaño al contenido.</h2>
+
+    <input type="button" value="ENVIAR" onclick="alert(cont)" />
+    <input type="button" value="LIMPIAR" onclick="limpiartextarea()" />
+
+    <div id="guardatxt">
+      <div
+        contenteditable="true"
+        id="textareaTrucho"
+        onkeyup="sapeartextarea()"
+        onblur="sapeartextarea()"
+      >
+        Texto de prueba en campo editable.
+      </div>
+    </div>
+
+    <hr />
+
+    <p style="font-family: 'arial unicode ms', quivira, symbola, titus;">
+      ( Aquí se ve cómo será enviado el contenido del falso
+      <code>textarea</code> :<br />&nbsp; &#x261f;
+    </p>
+
+    <textarea id="codigo" rows="10" cols="50"></textarea>
+
+    )
+  </body>
+</html>

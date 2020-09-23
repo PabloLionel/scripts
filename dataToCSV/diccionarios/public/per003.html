@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Informe de diccionario de Tabla de Datos - per003</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      body {  font-family: verdana, helvetica, sans-serif; margin: 0px; padding: 0; }
+      h1 { font-weight: bold; font-size: 150%; border-bottom-style: solid; border-bottom-width: 2px; margin-top: 0px; padding-bottom: 0.5ex; color: #eeeeee; overflow: hidden; text-overflow: ellipsis; }
+      h2 { font-size: 130%; padding-bottom: 0.5ex; color: #009ACE; border-bottom-style: solid; border-bottom-width: 2px; }
+      h3 { font-size: 110%; padding-bottom: 0.5ex; color: #000000; }
+      th { text-align: left; background-color: #009ACE; color: #eeeeee; }
+      #ReportHeader { padding: 10px; background-color: #009ACE; color: #eeeeee; border-bottom-style: solid; border-bottom-width: 2px; border-color: #999999; }
+      #ReportHeader th { width: 25%; white-space: nowrap; vertical-align: top; }
+      #ReportHeader td { vertical-align: top; color: #eeeeee; }
+      #ReportNotes { padding: 10px; background-color: #eeeeee; font-size: 80%; border-bottom-style: solid; border-bottom-width: 2px; border-color: #999999; }
+      .ReportSQL { margin-bottom: 10px; padding: 10px; display: block; background-color: #eeeeee; font-family: monospace; }
+      #ReportDetails { margin-left: 10px; margin-right: 10px; margin-bottom: 10px; }
+      #ReportDetails td, th { font-size: 80%; margin-left: 2px; margin-right: 2px; }
+      #ReportDetails th { border-bottom-color: #777777; border-bottom-style: solid; border-bottom-width: 2px; }
+      .ReportDetailsOddDataRow { background-color: #dddddd; }
+      .ReportDetailsEvenDataRow { background-color: #eeeeee; }
+      .ReportTableHeaderCell { background-color: #dddddd; color: #009ACE; vertical-align: top; font-size: 80%; white-space: nowrap; }
+      .ReportTableValueCell { vertical-align: top; font-size: 80%; white-space: nowrap; }
+      .ReportTableInfo { font-size: 80%; font-style: italic; }
+      #ReportFooter { font-weight: bold; font-size: 80%; text-align: right; background-color: #009ACE; color: #eeeeee; margin-top: 10px; padding: 2px; border-bottom-style: solid; border-bottom-width: 2px; border-top-style: solid; border-top-width: 2px; border-color: #999999; }
+      #ReportFooter a { color: #ffffff; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <div id="ReportHeader"><h1>Informe de diccionario de Tabla de Datos - per003</h1><b>Generado: </b>05/06/2019 11:49:09<br /><b>Servidor: </b>181 (192.168.10.181:5432)<br /><b>Base de Datos: </b>bdSueldos<br /><b>Esquema: </b>public<br /></div>
+    <div id="ReportDetails">
+      <h2>Columnas</h2>
+      <div style="overflow:auto;">
+        <table>
+          <tr>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">Nombre</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">Tipo de Dato</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">¿No Nulo?</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">¿Clave Primaria?</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">Defecto</th>
+            <th class="ReportTableHeaderCell" width="16,6666666666667%">Comentario</th>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">p03id</td>
+            <td class="ReportTableValueCell">smallint</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Identificador del registro - autonumérico</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">p03legajo</td>
+            <td class="ReportTableValueCell">integer</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Identificador del agente</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">p03ambito</td>
+            <td class="ReportTableValueCell">smallint</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Ambito de trabajo (público/privado/mixto)</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">p03descr</td>
+            <td class="ReportTableValueCell">character varying(150)</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Descripción</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">p03empleador</td>
+            <td class="ReportTableValueCell">character varying(150)</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Empleador</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">p03feing</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de ingreso</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">p03feegr</td>
+            <td class="ReportTableValueCell">date</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Fecha de egreso (puede no existir si el agente mantiene el trabajo)</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">p03coment</td>
+            <td class="ReportTableValueCell">character varying(200)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell">Comentario</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">p03porcrec</td>
+            <td class="ReportTableValueCell">numeric(4,2)</td>
+            <td class="ReportTableValueCell">Si</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">0.00</td>
+            <td class="ReportTableValueCell">Porcentaje de antigüedad reconocido para la liquidación y licencias</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">p03usualta</td>
+            <td class="ReportTableValueCell">character varying(20)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">p03fealta</td>
+            <td class="ReportTableValueCell">timestamp without time zone</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">now()</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">p03usumod</td>
+            <td class="ReportTableValueCell">character varying(20)</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell"> </td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">p03femod</td>
+            <td class="ReportTableValueCell">timestamp without time zone</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">No</td>
+            <td class="ReportTableValueCell">now()</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+        </table>
+      </div>
+      <br />
+      <h2>Restricciones</h2>
+      <div style="overflow:auto;">
+        <table>
+          <tr>
+            <th class="ReportTableHeaderCell" width="25%">Nombre</th>
+            <th class="ReportTableHeaderCell" width="25%">Tipo</th>
+            <th class="ReportTableHeaderCell" width="25%">Definición</th>
+            <th class="ReportTableHeaderCell" width="25%">Comentario</th>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">per003_pk</td>
+            <td class="ReportTableValueCell">Clave primaria</td>
+            <td class="ReportTableValueCell">(p03legajo, p03id)</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">per003_ca1</td>
+            <td class="ReportTableValueCell">Clave ajena</td>
+            <td class="ReportTableValueCell">(p03legajo)       REFERENCES per001 (p01legajo) MATCH SIMPLE       ON UPDATE CASCADE ON DELETE RESTRICT</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+        </table>
+      </div>
+      <br />
+    </div>
+    <div id="ReportFooter">
+Reporte generado por: <a href="http://www.pgadmin.org/">pgAdmin III</a></div>
+    <br />
+  </body>
+  <script src="../../main.js"></script>
+  <script>
+    htmlExtractorInformation(document)
+  </script>
+</html>

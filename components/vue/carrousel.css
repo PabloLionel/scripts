@@ -1,0 +1,63 @@
+.carousel {
+  width: 100%;
+  overflow-x: scroll;
+  padding: 30px;
+  position: relative;
+}
+.carousel .carousel__container {
+  white-space: nowrap;
+  margin: 70px 0;
+  padding-bottom: 10px;
+}
+.carousel .carousel-item {
+  display: inline-block;
+  background-color: #f4f4ed;
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  /* La imagen es cuadrada, por eso: */
+  overflow: hidden;
+  margin-right: 10px;
+  transition: 450ms all;
+  transform-origin: center left;
+  position: relative;
+}
+.carousel .carousel-item:hover ~ .carousel-item {
+  transform: translate3d(100px, 0, 0);
+}
+.carousel .carousel__container:hover .carousel-item {
+  opacity: 0.3;
+}
+.carousel .carousel__container:hover .carousel-item:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+.carousel .carousel-item__img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+.carousel .carousel-item__details {
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  color: white;
+  font-size: 10px;
+  opacity: 0;
+  transition: 450ms opacity;
+  padding: 5px 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.carousel .carousel-item__details img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.carousel .carousel-item__details:hover {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=carrousel.css.map */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>process-files</title>
+    <style>
+      img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="uploadForm">
+      <input
+        id="images"
+        type="file"
+        name="myFiles"
+        onchange="showFiles();"
+        multiple
+      />
+      <!-- webkitdirectory
+      mozdirectory
+      directory -->
+
+      <span id="list"></span>
+    </form>
+
+    <script>
+      const readAndShowFiles = () => {
+        const files = document.getElementById('images').files;
+        for (let file of files) {
+          let reader = new FileReader();
+          reader.onload = function (e) {
+            // Render thumbnail.
+            const div = document.createElement('div');
+            div.innerHTML = [
+              '<img src="',
+              e.target.result,
+              '" title="',
+              escape(file.name),
+              '">',
+            ].join('');
+            document.getElementById('list').insertBefore(div, null);
+          };
+          // Read in the image file as a data URL.
+          reader.readAsDataURL(file);
+        }
+      };
+      const showFiles = () => {
+        const { files } = document.getElementById('images');
+        for (let file of files) {
+          let img = new Image();
+          img.src = URL.createObjectURL(file);
+          img.title = file.name;
+          document.getElementById('list').appendChild(img);
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML to CSV</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .toolbar { background-color: rgba(204, 204, 204, 0.349) }
+        .toolbar > * {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        #app > ol {
+            display: block;
+            width: calc(20% - 40px);
+            float: left;
+            margin: 0;
+        }
+        #app ol summary { cursor: pointer }
+        #app > iframe {
+            width: 80%;
+            float: right;
+            height: calc(100vh - 38px);
+        }
+    </style>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div class="toolbar">
+        <h1>Generación de CSV</h1>
+    </div>
+    <main id="app">
+        <ol>
+            <h3>Esquemas: </h3>
+            <li v-for="dic in dics">
+                <details>
+                    <summary>{{dic.esquema}}</summary>
+                    <ol>
+                        <li v-for="link in dic.links"><a @click="loadLink(link.link)" href="#">{{link.name}}</a></li>
+                    </ol>
+                </details>
+            </li>
+        </ol>
+        <iframe :src="src" frameborder="0"></iframe>
+    </main>
+</body>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data() {
+            return {
+                src: '',
+                dics: [
+                    {
+                        esquema: 'aguara',
+                        links: [
+                            {name: 'producto', link: "./diccionarios/aguara/producto.html"},
+                            {name: 'proovedor', link: "./diccionarios/aguara/proovedor.html"},
+                            {name: 'tipo_fondo', link: "./diccionarios/aguara/tipo_fondo.html"},
+                            {name: 'tipo_producto', link: "./diccionarios/aguara/tipo_producto.html"},
+                            {name: 'ubicacion', link: "./diccionarios/aguara/ubicacion.html"},
+                        ],
+                    },
+                    {
+                        esquema: 'demandas',
+                        links: [
+                            {name: 'abogados', link: "./diccionarios/demandas/abogados.html"},
+                            {name: 'demandas', link: "./diccionarios/demandas/demandas.html"},
+                            {name: 'identificadores', link: "./diccionarios/demandas/identificadores.html"},
+                            {name: 'juzgados', link: "./diccionarios/demandas/juzgados.html"},
+                        ],
+                    },
+                    {
+                        esquema: 'escribania',
+                        links: [
+                            {name: 'acto', link: "./diccionarios/escribania/acto.html"},
+                            {name: 'adquiriente', link: "./diccionarios/escribania/adquiriente.html"},
+                            {name: 'adrema', link: "./diccionarios/escribania/adrema.html"},
+                            {name: 'certificacion', link: "./diccionarios/escribania/certificacion.html"},
+                            {name: 'departamento', link: "./diccionarios/escribania/departamento.html"},
+                            {name: 'estado_civil', link: "./diccionarios/escribania/estado_civil.html"},
+                            {name: 'imagen', link: "./diccionarios/escribania/imagen.html"},
+                            {name: 'inscripcion', link: "./diccionarios/escribania/inscripcion.html"},
+                            {name: 'personas', link: "./diccionarios/escribania/personas.html"},
+                            {name: 'requiriente', link: "./diccionarios/escribania/requiriente.html"},
+                            {name: 'tipo_doc', link: "./diccionarios/escribania/tipo_doc.html"},
+                            {name: 'tipo_documento', link: "./diccionarios/escribania/tipo_documento.html"},
+                            {name: 'tipo_personeria', link: "./diccionarios/escribania/tipo_personeria.html"},
+                            {name: 'tipo_propiedad', link: "./diccionarios/escribania/tipo_propiedad.html"},
+                            {name: 'tipo_representante', link: "./diccionarios/escribania/tipo_representante.html"},
+                            {name: 'transmitente', link: "./diccionarios/escribania/transmitente.html"}    
+                        ],
+                    },
+                    {
+                        esquema: 'expedientes',
+                        links: [
+                            {name: 'ex_asunto', link: "./diccionarios/expedientes/ex_asunto.html"},
+                            {name: 'ex_docs_solic', link: "./diccionarios/expedientes/ex_docs_solic.html"},
+                            {name: 'ex_filiacion', link: "./diccionarios/expedientes/ex_filiacion.html"},
+                            {name: 'ex_imagen', link: "./diccionarios/expedientes/ex_imagen.html"},
+                            {name: 'ex_informe', link: "./diccionarios/expedientes/ex_informe.html"},
+                            {name: 'ex_maestro', link: "./diccionarios/expedientes/ex_maestro.html"},
+                            {name: 'ex_movimiento', link: "./diccionarios/expedientes/ex_movimiento.html"},
+                            {name: 'ex_novedades', link: "./diccionarios/expedientes/ex_novedades.html"},
+                            {name: 'ex_numeracion', link: "./diccionarios/expedientes/ex_numeracion.html"},
+                            {name: 'ex_origen', link: "./diccionarios/expedientes/ex_origen.html"},
+                            {name: 'ex_origen_dep', link: "./diccionarios/expedientes/ex_origen_dep.html"},
+                            {name: 'ex_pdf', link: "./diccionarios/expedientes/ex_pdf.html"},
+                            {name: 'hc_afip_actividades', link: "./diccionarios/expedientes/hc_afip_actividades.html"},
+                            {name: 'hc_d_ocupa', link: "./diccionarios/expedientes/hc_d_ocupa.html"},
+                            {name: 'hc_login', link: "./diccionarios/expedientes/hc_login.html"},
+                            {name: 'hc_parametros', link: "./diccionarios/expedientes/hc_parametros.html"},
+                            {name: 'hc_solicitudes', link: "./diccionarios/expedientes/hc_solicitudes.html"},
+                            {name: 'lista_cab', link: "./diccionarios/expedientes/lista_cab.html"},
+                            {name: 'lista_det', link: "./diccionarios/expedientes/lista_det.html"},
+                            {name: 'temp', link: "./diccionarios/expedientes/temp.html"},
+                            {name: 'tipo_documento', link: "./diccionarios/expedientes/tipo_documento.html"},
+                            {name: 'usu_area', link: "./diccionarios/expedientes/usu_area.html"},
+                            {name: 'visitas', link: "./diccionarios/expedientes/visitas.html"},
+                        ]
+                    },
+                    {
+                        esquema: 'expedig',
+                        links: [
+                            {name: 'configuracion', link: "./diccionarios/expedig/configuracion.html"},
+                            {name: 'dig_cabecera', link: "./diccionarios/expedig/dig_cabecera.html"},
+                            {name: 'dig_detalle', link: "./diccionarios/expedig/dig_detalle.html"},
+                            {name: 'estados', link: "./diccionarios/expedig/estados.html"},
+                            {name: 'par_archivos', link: "./diccionarios/expedig/par_archivos.html"},
+                            {name: 'par_dominio_tipo', link: "./diccionarios/expedig/par_dominio_tipo.html"},
+                            {name: 'par_secciones', link: "./diccionarios/expedig/par_secciones.html"},
+                            {name: 'par_tipo_documento', link: "./diccionarios/expedig/par_tipo_documento.html"},
+                            {name: 'par_usu_archivo', link: "./diccionarios/expedig/par_usu_archivo.html"},
+                            {name: 'par_usuarios', link: "./diccionarios/expedig/par_usuarios.html"},
+                            {name: 'set_campos', link: "./diccionarios/expedig/set_campos.html"},
+                        ]
+                    },
+                    {
+                        esquema: 'fox',
+                        links: [
+                            {name: 'act_adic', link: "./diccionarios/fox/act_adic.html"},
+                            {name: 'adic09', link: "./diccionarios/fox/adic09.html"},
+                            {name: 'adminis', link: "./diccionarios/fox/adminis.html"},
+                            {name: 'agent_cod', link: "./diccionarios/fox/agent_cod.html"},
+                            {name: 'aprueba', link: "./diccionarios/fox/aprueba.html"},
+                            {name: 'as_funcion', link: "./diccionarios/fox/as_funcion.html"},
+                            {name: 'bajas', link: "./diccionarios/fox/bajas.html"},
+                            {name: 'beneficiarios', link: "./diccionarios/fox/beneficiarios.html"},
+                            {name: 'cmpmae_crono', link: "./diccionarios/fox/cmpmae_crono.html"},
+                            {name: 'cmpmae_total', link: "./diccionarios/fox/cmpmae_total.html"},
+                            {name: 'cod_asis_templ', link: "./diccionarios/fox/cod_asis_templ.html"},
+                            {name: 'codigos_baja', link: "./diccionarios/fox/codigos_baja.html"},
+                            {name: 'contab', link: "./diccionarios/fox/contab.html"},
+                            {name: 'cuil', link: "./diccionarios/fox/cuil.html"},
+                            {name: 'dep400', link: "./diccionarios/fox/dep400.html"},
+                            {name: 'doc_cuil', link: "./diccionarios/fox/doc_cuil.html"},
+                            {name: 'embargos', link: "./diccionarios/fox/embargos.html"},
+                            {name: 'higiene', link: "./diccionarios/fox/higiene.html"},
+                            {name: 'higine', link: "./diccionarios/fox/higine.html"},
+                            {name: 'liq09_tit', link: "./diccionarios/fox/liq09_tit.html"},
+                            {name: 'maestrof', link: "./diccionarios/fox/maestrof.html"},
+                            {name: 'maestrov', link: "./diccionarios/fox/maestrov.html"},
+                            {name: 'objeto_del_gasto', link: "./diccionarios/fox/objeto_del_gasto.html"},
+                            {name: 'objeto_gasto', link: "./diccionarios/fox/objeto_gasto.html"},
+                            {name: 'prev', link: "./diccionarios/fox/prev.html"},
+                            {name: 'proveedores', link: "./diccionarios/fox/proveedores.html"},
+                            {name: 'pruebas', link: "./diccionarios/fox/pruebas.html"},
+                            {name: 'recibo_nro', link: "./diccionarios/fox/recibo_nro.html"},
+                            {name: 'resumen_pilaga', link: "./diccionarios/fox/resumen_pilaga.html"},
+                            {name: 'salmae', link: "./diccionarios/fox/salmae.html"},
+                            {name: 'situacion', link: "./diccionarios/fox/situacion.html"},
+                            {name: 'snaliq', link: "./diccionarios/fox/snaliq.html"},
+                            {name: 'suecod', link: "./diccionarios/fox/suecod.html"},
+                            {name: 'suecon', link: "./diccionarios/fox/suecon.html"},
+                            {name: 'tarjetas', link: "./diccionarios/fox/tarjetas.html"},
+                            {name: 'tipo_liq', link: "./diccionarios/fox/tipo_liq.html"},
+                            {name: 'tipo_sit_obj', link: "./diccionarios/fox/tipo_sit_obj.html"},
+                            {name: 'unidad_presup', link: "./diccionarios/fox/unidad_presup.html"},
+                            {name: 'unidad_presup_2019', link: "./diccionarios/fox/unidad_presup_2019.html"},
+                        ]
+                    },
+                    {
+                        esquema: 'public',
+                        links: [
+                            {name: 'per001', link: "./diccionarios/public/per001.html"},
+                            {name: 'per002', link: "./diccionarios/public/per002.html"},
+                            {name: 'per003', link: "./diccionarios/public/per003.html"},
+                            {name: 'per004', link: "./diccionarios/public/per004.html"},
+                            {name: 'per005', link: "./diccionarios/public/per005.html"},
+                            {name: 'per006', link: "./diccionarios/public/per006.html"},
+                            {name: 'per007', link: "./diccionarios/public/per007.html"},
+                            {name: 'per008', link: "./diccionarios/public/per008.html"},
+                            {name: 'per009', link: "./diccionarios/public/per009.html"},
+                            {name: 'per010', link: "./diccionarios/public/per010.html"},
+                        ]
+                    }
+                ]
+            }
+        },
+        methods: {
+            loadLink(link) { this.src = link }
+        }
+    })
+</script>
+</html>

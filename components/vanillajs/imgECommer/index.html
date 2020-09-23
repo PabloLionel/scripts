@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>img ecommer</title>
+    <style>
+      :root {
+        --color-1: #ccc;
+        --color-2: #666;
+      }
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-transform: capitalize;
+      }
+      .image {
+        background-size: cover;
+        background-position: center;
+        border: 1px solid var(--color-1);
+      }
+      .image[data-index='1'] {
+        background-image: url('assets/1.jpg');
+      }
+      .image[data-index='2'] {
+        background-image: url('assets/2.jpg');
+      }
+      .image[data-index='3'] {
+        background-image: url('assets/3.png');
+      }
+      #container {
+        width: 80vmin;
+        height: 80vmin;
+        display: flex;
+      }
+      .left-column {
+        width: 20%;
+        height: 100%;
+      }
+      .left-column .small-image {
+        width: 100%;
+        height: 25%;
+        margin-bottom: 5%;
+        cursor: pointer;
+        transition: all 0.2s initial;
+      }
+      .left-column .small-image .active,
+      .left-column .small-image:hover {
+        border-color: var(--color-2);
+      }
+      .right-column {
+        width: 80%;
+        height: 100%;
+        padding: 0 2%;
+      }
+      .right-column .image-preview {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        border: 1px solid var(--color-1);
+        cursor: zoom-in;
+        transition: all 0.1s linear;
+      }
+      .right-column .image-preview:hover {
+        background-size: 200vmin auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h1>img e-commer</h1>
+    </center>
+    <div id="container">
+      <div class="left-column">
+        <div class="active image small-image" data-index="1"></div>
+        <div class="image small-image" data-index="2"></div>
+        <div class="image small-image" data-index="3"></div>
+      </div>
+      <div class="right-column">
+        <div class="image-preview image" data-index="1"></div>
+      </div>
+    </div>
+    <a
+      href="https://teespring.com/recursion-loop?tsmac=store&amp;tsmic=roomjs#pid=389&amp;cid=100019&amp;sid=front"
+      id="shop-link"
+      target="_blank"
+    >
+      * If you like the design you can buy this t-shirt in our online shop >>
+    </a>
+  </body>
+  <script>
+    window.onload = () => {
+      const previewEl = document.querySelector('.image-preview');
+      const previewWidth = previewEl.offsetWidth;
+      const previewHeight = previewEl.offsetHeight;
+      document.querySelector('.left-column').addEventListener('click', (e) => {
+        const curClassList = e.target.classList;
+        if (
+          !curClassList.contains('small-image') ||
+          (curClassList.contains('small-image') &&
+            curClassList.contains('.active'))
+        )
+          return;
+        document
+          .querySelector('.small-image.active')
+          .classList.remove('active');
+        curClassList.add('active');
+        previewEl.dataset.index = e.target.dataset.index;
+        // const imgIndex = e.target.dataset.index
+        // imgIndex
+      });
+      previewEl.addEventListener('mousemove', (e) => {
+        const offsetXPercent = Math.round((e.offsetX * 100) / previewWidth);
+        const offsetYPercent = Math.round((e.offsetY * 100) / previewHeight);
+        previewEl.style.backgroundPosition = `${offsetXPercent}% ${offsetYPercent}%`;
+      });
+      previewEl.addEventListener('mouseleave', (e) => {
+        previewEl.style.removeProperty('background-position');
+      });
+    };
+  </script>
+</html>

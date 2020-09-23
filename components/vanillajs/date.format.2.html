@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <b>Date Format</b>
+  </title>
+  <style>
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .exmp-wrp {
+      position: relative;
+    }
+
+    .btn-wrp {
+      border: 1px solid #dadada;
+      display: inline-block;
+      width: 100%;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn-clck {
+      border: none;
+      background: transparent;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .btn-clck::-webkit-calendar-picker-indicator {
+      right: -10px;
+      position: absolute;
+      width: 78px;
+      height: 40px;
+      color: rgba(204, 204, 204, 0);
+      opacity: 0
+    }
+
+    .btn-clck::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    .btn-clck::-webkit-clear-button {
+      margin-right:75px;
+    }
+    .btn {
+      height: 100%;
+      background: #3f51b5;
+      border: none;
+      color: #fff;
+      padding: 13px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js" integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA==" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="exmp-wrp">
+    <div class="btn-wrp">
+      <input type="date" class="btn-clck"/>
+    </div>
+    <button class="btn">Click me</button>
+  </div>
+</body>
+<script>
+  // const cleaveInputDate = new Cleave('.btn-clck', {
+  //   date: true,
+  //   delimiter: '-',
+  //   datePattern: ['d', 'm','Y']
+  // });
+</script>
+
+</html>

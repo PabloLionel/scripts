@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Informe de estadísticas de tabla - personas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      body {  font-family: verdana, helvetica, sans-serif; margin: 0px; padding: 0; }
+      h1 { font-weight: bold; font-size: 150%; border-bottom-style: solid; border-bottom-width: 2px; margin-top: 0px; padding-bottom: 0.5ex; color: #eeeeee; overflow: hidden; text-overflow: ellipsis; }
+      h2 { font-size: 130%; padding-bottom: 0.5ex; color: #009ACE; border-bottom-style: solid; border-bottom-width: 2px; }
+      h3 { font-size: 110%; padding-bottom: 0.5ex; color: #000000; }
+      th { text-align: left; background-color: #009ACE; color: #eeeeee; }
+      #ReportHeader { padding: 10px; background-color: #009ACE; color: #eeeeee; border-bottom-style: solid; border-bottom-width: 2px; border-color: #999999; }
+      #ReportHeader th { width: 25%; white-space: nowrap; vertical-align: top; }
+      #ReportHeader td { vertical-align: top; color: #eeeeee; }
+      #ReportNotes { padding: 10px; background-color: #eeeeee; font-size: 80%; border-bottom-style: solid; border-bottom-width: 2px; border-color: #999999; }
+      .ReportSQL { margin-bottom: 10px; padding: 10px; display: block; background-color: #eeeeee; font-family: monospace; }
+      #ReportDetails { margin-left: 10px; margin-right: 10px; margin-bottom: 10px; }
+      #ReportDetails td, th { font-size: 80%; margin-left: 2px; margin-right: 2px; }
+      #ReportDetails th { border-bottom-color: #777777; border-bottom-style: solid; border-bottom-width: 2px; }
+      .ReportDetailsOddDataRow { background-color: #dddddd; }
+      .ReportDetailsEvenDataRow { background-color: #eeeeee; }
+      .ReportTableHeaderCell { background-color: #dddddd; color: #009ACE; vertical-align: top; font-size: 80%; white-space: nowrap; }
+      .ReportTableValueCell { vertical-align: top; font-size: 80%; white-space: nowrap; }
+      .ReportTableInfo { font-size: 80%; font-style: italic; }
+      #ReportFooter { font-weight: bold; font-size: 80%; text-align: right; background-color: #009ACE; color: #eeeeee; margin-top: 10px; padding: 2px; border-bottom-style: solid; border-bottom-width: 2px; border-top-style: solid; border-top-width: 2px; border-color: #999999; }
+      #ReportFooter a { color: #ffffff; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <div id="ReportHeader"><h1>Informe de estadísticas de tabla - personas</h1><b>Generado: </b>10/06/2019 10:45:51<br /><b>Servidor: </b>181 (192.168.10.181:5432)<br /><b>Base de Datos: </b>bdSueldos<br /><b>Esquema: </b>escribania<br /></div>
+    <div id="ReportDetails">
+      <h2>Estadísticas de tabla</h2>
+      <div style="overflow:auto;">
+        <table>
+          <tr>
+            <th class="ReportTableHeaderCell" width="50%">Estadística</th>
+            <th class="ReportTableHeaderCell" width="50%">Valor</th>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Barridos Secuenciales</td>
+            <td class="ReportTableValueCell">63</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Lectura Secuencial de Tuplas</td>
+            <td class="ReportTableValueCell">888358</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Búsqueda por Indices</td>
+            <td class="ReportTableValueCell">2300</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Tuplas de Indice Extraídas</td>
+            <td class="ReportTableValueCell">23876</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Tuplas Insertadas</td>
+            <td class="ReportTableValueCell">12</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Tuplas Actualizadas</td>
+            <td class="ReportTableValueCell">0</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Tuplas Eliminadas</td>
+            <td class="ReportTableValueCell">0</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Tuplas HOT Actualizadas</td>
+            <td class="ReportTableValueCell">0</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Tuplas Vivas</td>
+            <td class="ReportTableValueCell">12</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Tuplas Muertas</td>
+            <td class="ReportTableValueCell">0</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Bloques Heap Leídos</td>
+            <td class="ReportTableValueCell">3756</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Bloques Heap Acertados</td>
+            <td class="ReportTableValueCell">12399</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Bloques de Indice Leidos</td>
+            <td class="ReportTableValueCell">255</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Bloques de Indice Acertados</td>
+            <td class="ReportTableValueCell">4150</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Bloques Toast Leídos</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Bloques Toast Acertados</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Bloques Toast Index Leídos</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Bloques Toast Index Acertados</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Ultimo Vaccum</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Último Autovacuum </td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Último Analyze</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Último Autoanalyze</td>
+            <td class="ReportTableValueCell"> </td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Vaciar contador</td>
+            <td class="ReportTableValueCell">0</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Autovaciado de contador</td>
+            <td class="ReportTableValueCell">0</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Analizar contador</td>
+            <td class="ReportTableValueCell">0</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Autoanalizar contador</td>
+            <td class="ReportTableValueCell">0</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Tamaño de Tabla</td>
+            <td class="ReportTableValueCell">1720 kB</td>
+          </tr>
+          <tr class="ReportDetailsOddDataRow">
+            <td class="ReportTableValueCell">Tamaño de Tabla Toast</td>
+            <td class="ReportTableValueCell">ninguno</td>
+          </tr>
+          <tr class="ReportDetailsEvenDataRow">
+            <td class="ReportTableValueCell">Tamaño del Índice</td>
+            <td class="ReportTableValueCell">328 kB</td>
+          </tr>
+        </table>
+      </div>
+      <br />
+    </div>
+    <div id="ReportFooter">
+Reporte generado por: <a href="http://www.pgadmin.org/">pgAdmin III</a></div>
+    <br />
+  </body>
+  <script src="../../main.js"></script>
+  <script>
+    htmlExtractorInformation(document)
+  </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jojo</title>
+    <style>
+      textarea {
+        width: calc(100% - 8px);
+      }
+    </style>
+  </head>
+  <body>
+    <textarea
+      id="$entrada"
+      type="text"
+      value="38 nqv"
+      oninput="$salida.textContent = $entrada.value;"
+      onfocus="console.dir({$entrada, $salida})"
+    ></textarea>
+    <textarea id="$entrada2"></textarea>
+    <button onclick="console.log($entrada2.value, $entrada.value)">
+      enviar
+    </button>
+    <p id="$salida"></p>
+  </body>
+</html>

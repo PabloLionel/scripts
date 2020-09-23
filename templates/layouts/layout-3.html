@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="&#x1F6AB;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      /* flex-flow: flex-direction | flex-wrap; */
+      flex-flow: column;
+    }
+    .header {
+      outline: 1px solid gold;
+      height: 3rem;
+    }
+    .header .menu {
+      display: flex;
+    }
+    .header .menu .menu__item {
+      list-style: none;
+      flex: 1;
+      outline: 1px solid gold;
+      line-height: 3rem;
+      text-align: center;
+      transition: flex 0.5s;
+    }
+    .header .menu .menu__item:hover {
+      flex: 4;
+    }
+    main.container {
+      display: flex;
+      box-shadow: 0 0 0 1px red;
+      height: inherit;
+    }
+    main.container .content {
+      outline: 1px solid cyan;
+      /* Siempre ocupe todo el ancho disponible, No importa el tamaño del navegador*/
+      /* flex: 1 1 auto; o flex: 1; */
+      flex: 1;
+    }
+    main.container .aside {
+      outline: 1px solid magenta;
+      /* flex: flex-grow | flex-shrink | flex-basis */
+      /* flex: (absolutos) | (absolutos) | (absolutos o relativos) */
+      /* flex: (0: no crece) | (0: no se reduce) | (absolutos o relativos) */
+      flex: 0 0 25%;
+    }
+    .footer {
+      outline: 1px solid green;
+      height: 6rem;
+      margin-top: auto;
+    }
+  </style>
+  <body>
+    <header class="header">
+      <ul class="menu">
+        <li class="menu__item">item-1</li>
+        <li class="menu__item">item-2</li>
+        <li class="menu__item">item-3</li>
+        <li class="menu__item">item-4</li>
+      </ul>
+    </header>
+    <main class="container">
+      <section class="content">
+        soy un content
+      </section>
+      <aside class="aside">soy un aside</aside>
+    </main>
+    <footer class="footer">soy un footer</footer>
+  </body>
+</html>
