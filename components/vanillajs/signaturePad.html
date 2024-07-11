@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <link type="text/css" rel="stylesheet" href="style.css"/> -->
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+      * { box-sizing: border-box; }
+
+      .container {
+        display: grid;
+
+        place-items: center;
+
+        width: 100%;
+        height: 100%;
+      }
+
+      .drawer,
+      .actions {
+        display: flex;
+      }
+
+      .drawer {
+        gap: 4px;
+
+        flex-direction: column;
+      }
+
+      canvas {
+        border: 1px solid grey;
+
+        border-radius: 4px;
+      }
+
+      .actions {
+        justify-content: space-between;
+      }
+
+      .actions button {
+        min-width: 45px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <span class="drawer">
+        <canvas
+          id="signature-pad"
+          class="signature-pad"
+          width=300
+          height=200
+        ></canvas>
+
+        <div class="actions">
+          <button id="signature-pad-clear">Clear</button>
+          <button id="signature-pad-png">PNG</button>
+          <!--
+            <button id="signature-pad-jpeg">jpeg</button>
+            <button id="signature-pad-svg">svg</button>
+          -->
+        </div>
+      </span>
+    </div>
+
+    <script type="module">
+      /** {@link https://github.com/szimek/signature_pad?tab=readme-ov-file} */
+
+      import SignaturePad from 'https://cdn.jsdelivr.net/npm/signature_pad@5.0.2/+esm';
+
+      const canvas = document.getElementById('signature-pad');
+
+      const signaturePad = new SignaturePad(canvas);
+
+      const signaturePadClear = document.getElementById('signature-pad-clear');
+      const signaturePadPNG = document.getElementById('signature-pad-png');
+      // const signaturePadJPEG = document.getElementById('signature-pad-jpeg');
+      // const signaturePadSVG = document.getElementById('signature-pad-svg');
+
+      signaturePadClear.addEventListener('click', e => signaturePad.clear());
+      signaturePadPNG.addEventListener('click', e => {
+        const data = signaturePad.toDataURL('image/png', { clear: false });
+
+        toSave(data, 'demo.png');
+      });
+      // signaturePadJPEG.addEventListener('click', e => {
+      //   const data = signaturePad.toDataURL('image/jpeg', { clear: false, includeBackgroundColor: true });
+
+      //   toSave(data, 'demo.jpeg');
+      // });
+      // signaturePadSVG.addEventListener('click', e => {
+      //   const data = signaturePad.toDataURL('image/svg+xml', { clear: false });
+
+      //   toSave(data, 'demo.svg');
+      // });
+
+      function toSave(data, name) {
+        const link = document.createElement('a');
+        link.setAttribute('style', 'display:none');
+        link.setAttribute('download', name);
+        link.setAttribute('href', data.replace("image/png", "image/octet-stream"));
+        document.body.appendChild(link);
+        link.click();
+      }
+    </script>
+  </body>
+</html>
