@@ -2,7 +2,15 @@ import { Directive, Input, TemplateRef, ViewContainerRef, OnDestroy } from '@ang
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ApiState } from './api-state.interface';
-import { DefaultLoadingComponent, DefaultErrorComponent } from './defaults';
+
+
+@Component({ selector: 'app-default-loading', template: '<p>Cargando...</p>', standalone: true })
+export class DefaultLoadingComponent {}
+
+@Component({ selector: 'app-default-error', template: '<p>Ocurrió un error inesperado.</p>', standalone: true })
+export class DefaultErrorComponent {}
+
+
 
 @Directive({
   selector: '[appApiState]',
