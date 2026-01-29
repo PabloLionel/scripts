@@ -1,4 +1,11 @@
-import { Directive, Input, TemplateRef, ViewContainerRef, OnDestroy } from '@angular/core';
+import {
+  Directive,
+  Input,
+  TemplateRef,
+  ViewContainerRef,
+  OnDestroy,
+  Component,
+} from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ApiState } from './api-state.interface';
