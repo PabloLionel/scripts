@@ -21,7 +21,5 @@ function notifyer() {
         console.error(err);
       });
     }
-
   }
-
 }
