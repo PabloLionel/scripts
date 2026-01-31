@@ -1,30 +1,32 @@
-async function sendNotification(title, options = {}) {
-  // 1. Validación de soporte (Corregido)
+async function sendNotification(title, options = {}, duration = 5000) {
   if (!("Notification" in window)) {
-    console.warn("Este navegador no soporta notificaciones de escritorio.");
+    console.warn("Navegador no compatible.");
     return;
   }
 
-  // 2. Gestión de permisos usando async/await para mayor claridad
   let permission = Notification.permission;
-
   if (permission === "default") {
     permission = await Notification.requestPermission();
   }
 
-  // 3. Ejecución si el permiso es concedido
   if (permission === "granted") {
-    const defaultOptions = {
-      body: "¡Hola!",
+    const notification = new Notification(title, {
+      body: "Mensaje por defecto",
       icon: "https://cdn-icons-png.flaticon.com/512/4980/4980801.png",
-      ...options // Permite sobrescribir opciones al llamar la función
-    };
-    
-    return new Notification(title, defaultOptions);
-  }
+      ...options
+    });
 
-  // 4. Manejo de rechazo
-  if (permission === "denied") {
-    console.info("El usuario bloqueó las notificaciones.");
+    // 1. Foco al hacer clic
+    notification.onclick = () => {
+      window.focus();
+      notification.close();
+    };
+
+    // 2. Cierre automático (si duration es mayor a 0)
+    if (duration > 0) {
+      setTimeout(() => notification.close(), duration);
+    }
+
+    return notification;
   }
 }
