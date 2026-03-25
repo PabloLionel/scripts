@@ -1,0 +1,39 @@
+<script>
+let index = 0:
+let observer = new Intersection0bserver(([entry]) => {
+    if (entry.isIntersecting) {
+      index += entry.target === next ? 1: -1;
+      carousel.scrollLeft = carousel.clientWidth;
+    }
+  }, { root: carousel, threshold: '1.0' });
+
+  carousel.scrollLeft = carousel.clientWidth;
+  observer.observe(previous);
+  observer.observe(next);
+</script>
+
+<style>
+section {
+  display: flex;
+  overflow: scroll;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+div {
+  min-inline-size: 100%;
+  scroll-snap-align: start;
+}
+</style>
+
+<section id="carousel">
+  <div id="previous">
+    {{ index - 1 }}
+  </div>
+
+  <div id="current"> {{ index }} </div>
+
+  <div id="next">
+  {{ index + 1 }}
+  </div>
+</section>
